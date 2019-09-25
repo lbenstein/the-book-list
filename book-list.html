@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Book List</title>
+</head>
+
+<body>
+  <h1>My Book List</h1>
+</body>
+
+<script>
+
+  var books = [
+      {
+        title: 'The Design of EveryDay Things',
+        author: 'Don Norman',
+        alreadyRead: false
+      }, {
+        title: 'The Most Human Human',
+        author: 'Brian Christian',
+        alreadyRead: true
+      }
+    ];
+    var grabBody = document.querySelector('body');
+    for (var i = 0; i < books.length; i++)
+    {
+    var newPara = document.createElement('p');
+    newPara.innerHTML = books[i].title + ', by ' + books[i].author;
+    grabBody.appendChild(newPara);
+    }
+
+</script>
+</html>
