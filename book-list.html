@@ -33,8 +33,11 @@
     var newBook = document.createElement('li');
     newBook.innerHTML = books[i].title + ', by ' + books[i].author + '<img src="' + books[i].imageCover + '">';
     newList.appendChild(newBook);
-    if (books[i].alreadyRead === 'true') {
-      document.getElementById('li') .style.fontcolor = 'red';
+    if (books[i].alreadyRead === true) {
+      newBook.style.color = 'red';
+      }
+      else {
+        newBook.style.color = 'blue';
       }
     }
 
