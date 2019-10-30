@@ -20,19 +20,22 @@
       }, {
         title: 'The Most Human Human',
         author: 'Brian Christian',
-        alreadyRead: true
+        alreadyRead: true,
         imageCover: 'https://m.media-amazon.com/images/I/71HMyqG6MRL._AC_UY218_ML3_.jpg'
       }
     ];
 
     var grabBody = document.querySelector('body');
     var newList = document.createElement('ul');
-    var grabList = document.querySelector('ul');
+    grabBody.appendChild(newList);
     for (var i = 0; i < books.length; i++)
     {
     var newBook = document.createElement('li');
-    newBook.innerHTML = books[i].title + ', by ' + books[i].author + imageCover;
-    grabList.appendChild(newBook);
+    newBook.innerHTML = books[i].title + ', by ' + books[i].author + '<img src="' + books[i].imageCover + '">';
+    newList.appendChild(newBook);
+    if (books[i].alreadyRead === 'true') {
+      newBook.style.fontcolor = 'red';
+    }
     }
 
 </script>
